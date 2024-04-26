@@ -1,0 +1,28 @@
+/* Používáme intuitivní výpočet rozměrů prvků. */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 20rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.digit {
+  color: black;
+  font-size: 48px;
+  font-weight: bold;
+  background-color: rgb(0,221,0);
+  border-radius: 5px;
+  padding: 15px;
+  margin: 5px;
+}
+
+.digits {
+  display: flex;
+}
