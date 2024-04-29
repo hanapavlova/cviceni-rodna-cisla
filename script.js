@@ -170,19 +170,22 @@ if (checkBirthID(rodneCislo) === "ok") {
 //CIFRY JAKO HTML ELEMENTY:
 
 const validace = validateCharacters(rodneCislo);
-const digits = document.querySelector(".digits");
+const digits = document.querySelector(".digits");       //v tomto divu chci zobrazovat znaky s barevným pozadím
 digits.innerHTML = "";
 
 validace.forEach((item) => {
-    const digitElm = document.createElement("div");
-    digitElm.classList.add("digit");
-    digitElm.innerHTML = item.char;
+    const digitElm = document.createElement("div");     //vytvoření prázdného divu
+    digitElm.classList.add("digit");                    //přidání třídy
+    digitElm.innerHTML = item.char;                     //přidání obsahu
 
     if (item.digit === true) {
-        digitElm.style.backgroundColor = "#00DD00"; // Zelená pro číslice
+        digitElm.style.backgroundColor = "#00DD00"; // přidání barvy pozadí - zelená pro číslice
     } else {
-        digits.style.backgroundColor = "#FF8686"; // Červená pro nečíslice
+        digitElm.style.backgroundColor = "#FF8686"; // Červená pro nečíslice
     }
+//tohle se opakuje, dokud nedojdou znaky
+
+digits.appendChild(digitElm);             //přidává vyrobené divy do divu digits > pokud by to tam nebylo, ty jednotlivé divy se nikde nezobrazí
 
 });
 });
